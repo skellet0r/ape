@@ -125,7 +125,7 @@ class PluginManager:
     def __init__(self) -> None:
         # NOTE: This actually loads the plugins, and should only be done once
         for _, name, ispkg in pkgutil.iter_modules():
-            if name.startswith("ape_") and ispkg:
+            if name.startswith("ape_"):
                 try:
                     plugin_manager.register(importlib.import_module(name))
                 except Exception as err:
